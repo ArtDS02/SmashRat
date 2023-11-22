@@ -1,3 +1,7 @@
+body {
+  cursor:url(./img/hammer1.png),auto;
+}
+
 #hammer {
   width: 100px;
   height: 100px;
@@ -20,3 +24,4 @@
   justify-content: space-around;
   height: fit-content;
 }
+

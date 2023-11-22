@@ -35,6 +35,8 @@ const Table = () => {
     };
   }, []);
 
+
+  // Tính điểm khi MouseMove vào
   useEffect(() => {
     const ratElement = document.querySelector('.rat');
     if (ratElement) {
@@ -50,42 +52,18 @@ const Table = () => {
           mouseY <= ratRect.bottom
         ) {
             setScore(score + 1);
-            // setRatLocation(null);
             setCheck(true);
         }
       }
   })
 
-  const onRatClick = () => {
-    if (ratLocation !== null) {
-      setScore(score + 1);
-      setRatLocation(null); // Remove the rat from the hole
-    }
-  };
-
-  const checkCollision = (event) => {
-    if (ratLocation !== null && event.target.tagName === 'IMG') {
-      const ratRect = event.target.getBoundingClientRect();
-      const hammerRect = document.getElementById('hammer').getBoundingClientRect();
-
-      if (
-        ratRect.left < hammerRect.right &&
-        ratRect.right > hammerRect.left &&
-        ratRect.top < hammerRect.bottom &&
-        ratRect.bottom > hammerRect.top
-      ) {
-        setScore(score + 1); // Increment score if hammer and rat are at the same position
-        setRatLocation(null); // Remove the rat from the hole
-      }
-    }
-  };
 
   const renderTable = () => {
     const holes = [];
 
     for (let i = 0; i < 8; i++) {
       if (i === ratLocation) {
-        holes.push(<img key={i} src={check ? DeadRat :Rat} alt="Rat Logo" className={check ? 'dead-rat' : 'rat'} onClick={onRatClick}/>);
+        holes.push(<img key={i} src={check ? DeadRat :Rat} alt="Rat Logo" className={check ? 'dead-rat' : 'rat'} />);
       } else {
         holes.push(<img key={i} src={Hole} alt="Hole Logo" />);
       }
@@ -96,7 +74,7 @@ const Table = () => {
       rows.push(
         <div key={i} className='row-game'>
           {holes.slice(i * 4, (i + 1) * 4).map((hole, index) => (
-            <div key={index} onClick={checkCollision}>
+            <div key={index}>
               {hole}
             </div>
           ))}

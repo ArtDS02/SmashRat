@@ -9,7 +9,7 @@ const ChangeableTag = () => {
 
   return (
     <div>
-      <Hammer></Hammer>
+      {/* <Hammer></Hammer> */}
       <Table></Table>
     </div>
   );
