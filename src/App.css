@@ -1,27 +1,9 @@
-body {
-  cursor:url(./img/hammer1.png),auto;
-}
-
-#hammer {
+.tank{
   width: 100px;
   height: 100px;
-  position: absolute;
-  transition: transform 0.5s;
+  background-color: lightblue;
 }
 
-.img-hammer{
-  rotate: 45deg;
+.map{
+  background-image: url("./img/map1.jpg");
 }
-
-.table-game{
-  margin: 13% auto;
-  width: 80%;
-}
-
-.row-game{
-  margin-bottom: 10%;
-  display: flex;
-  justify-content: space-around;
-  height: fit-content;
-}
-

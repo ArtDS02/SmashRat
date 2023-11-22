@@ -1,18 +1,12 @@
 import React from 'react';
-import './App.css';
-import Hammer from './component/hammer.js';
-import Table from './component/table.js';
+import SquareBox from './component/Tank.js';
 
-
-const ChangeableTag = () => {
-
-
+const App = () => {
   return (
-    <div>
-      {/* <Hammer></Hammer> */}
-      <Table></Table>
+    <div className='map' style={{height:"739px"}}>
+      <SquareBox />
     </div>
   );
 };
 
-export default ChangeableTag;
+export default App;
